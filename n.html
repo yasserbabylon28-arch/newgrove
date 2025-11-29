@@ -1,0 +1,2018 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Leader-Bewerbung von Yasser Babylon für die Grove Street Gang">
+    <title>Leader-Bewerbung | Yasser Babylon - Grove Street Gang</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --grove-green: #00ff41;
+            --dark-green: #00cc33;
+            --deep-black: #000000;
+            --card-dark: #0d0d0d;
+            --card-light: #1a1a1a;
+            --text-white: #ffffff;
+            --text-muted: #a0a0a0;
+            --accent-glow: #00ff41;
+            --border-subtle: #2a2a2a;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--deep-black);
+            color: var(--text-white);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* Animated Background with Particles */
+        .animated-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(0, 255, 65, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(0, 204, 51, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 40% 20%, rgba(0, 255, 65, 0.05) 0%, transparent 50%);
+        }
+
+        .animated-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                repeating-linear-gradient(
+                    90deg,
+                    transparent,
+                    transparent 2px,
+                    rgba(6, 238, 64, 0.03) 2px,
+                    rgba(0, 255, 64, 0.03) 4px
+                );
+            animation: slideBackground 20s linear infinite;
+        }
+
+        @keyframes slideBackground {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(50px); }
+        }
+
+        /* Particles */
+        .particles {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .particle {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: var(--grove-green);
+            border-radius: 50%;
+            opacity: 0.3;
+            animation: float linear infinite;
+            box-shadow: 0 0 10px var(--grove-green);
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) translateX(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.3;
+            }
+            90% {
+                opacity: 0.3;
+            }
+            100% {
+                transform: translateY(-100px) translateX(100px);
+                opacity: 0;
+            }
+        }
+
+        /* Progress Bar */
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--dark-green), var(--grove-green));
+            z-index: 9999;
+            transform-origin: left;
+            box-shadow: 0 0 10px var(--grove-green);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '💚';
+            position: absolute;
+            font-size: 30rem;
+            opacity: 0.03;
+            animation: rotate 30s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .hero-badge {
+            width: 180px;
+            height: 180px;
+            background: linear-gradient(135deg, var(--dark-green), var(--grove-green));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            margin-bottom: 2rem;
+            box-shadow: 
+                0 0 60px rgba(0, 255, 65, 0.5),
+                0 0 100px rgba(0, 255, 65, 0.3),
+                inset 0 0 40px rgba(0, 255, 65, 0.1);
+            animation: heroGlow 3s ease-in-out infinite;
+            position: relative;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .hero-badge:hover {
+            transform: scale(1.1) rotate(10deg);
+        }
+
+        @keyframes heroGlow {
+            0%, 100% { 
+                box-shadow: 
+                    0 0 60px rgba(0, 255, 65, 0.5),
+                    0 0 100px rgba(0, 255, 65, 0.3);
+                transform: scale(1);
+            }
+            50% { 
+                box-shadow: 
+                    0 0 80px rgba(0, 255, 65, 0.7),
+                    0 0 120px rgba(0, 255, 65, 0.4);
+                transform: scale(1.05);
+            }
+        }
+
+        .hero h1 {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 5rem;
+            color: var(--grove-green);
+            text-transform: uppercase;
+            letter-spacing: 8px;
+            margin-bottom: 1rem;
+            text-shadow: 
+                0 0 20px rgba(0, 255, 65, 0.9),
+                0 0 40px rgba(0, 255, 65, 0.5),
+                0 5px 10px rgba(0, 0, 0, 0.8);
+            animation: titleGlow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes titleGlow {
+            from { 
+                text-shadow: 
+                    0 0 20px rgba(0, 255, 65, 0.9), 
+                    0 0 40px rgba(0, 255, 65, 0.5);
+            }
+            to { 
+                text-shadow: 
+                    0 0 30px rgba(0, 255, 65, 1), 
+                    0 0 60px rgba(0, 255, 65, 0.7);
+            }
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            font-weight: 300;
+            color: var(--text-white);
+            margin-bottom: 1rem;
+        }
+
+        .hero .subtitle {
+            font-size: 1.3rem;
+            color: var(--text-muted);
+            margin-bottom: 3rem;
+        }
+
+        .intro-box {
+            background: linear-gradient(135deg, rgba(0, 255, 65, 0.1), rgba(0, 204, 51, 0.05));
+            border: 2px solid var(--dark-green);
+            border-radius: 15px;
+            padding: 2rem 3rem;
+            max-width: 800px;
+            margin-top: 2rem;
+            box-shadow: 0 10px 40px rgba(0, 255, 65, 0.2);
+            backdrop-filter: blur(10px);
+            transition: all 0.4s ease;
+        }
+
+        .intro-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 50px rgba(0, 255, 65, 0.3);
+        }
+
+        .intro-box p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            padding: 1.2rem 0;
+            border-bottom: 2px solid var(--dark-green);
+            box-shadow: 0 5px 30px rgba(0, 255, 65, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled {
+            padding: 0.8rem 0;
+            box-shadow: 0 5px 40px rgba(0, 255, 65, 0.4);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 3rem;
+        }
+
+        nav a {
+            color: var(--text-white);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        nav a::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--grove-green);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+            box-shadow: 0 0 10px var(--grove-green);
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: var(--grove-green);
+        }
+
+        nav a:hover::before,
+        nav a.active::before {
+            width: 100%;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 6rem 2rem;
+        }
+
+        /* Section */
+        section {
+            margin-bottom: 8rem;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 3.5rem;
+            color: var(--grove-green);
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 20px rgba(0, 255, 65, 0.5);
+            display: inline-block;
+            position: relative;
+        }
+
+        .section-title .line {
+            width: 120px;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, var(--grove-green), transparent);
+            margin: 0 auto;
+            border-radius: 2px;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scaleX(1); }
+            50% { opacity: 0.7; transform: scaleX(1.1); }
+        }
+
+        /* Modern Cards with Glassmorphism */
+        .card {
+            background: linear-gradient(135deg, rgba(13, 13, 13, 0.9) 0%, rgba(26, 26, 26, 0.9) 100%);
+            border: 1px solid var(--border-subtle);
+            border-radius: 20px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            backdrop-filter: blur(10px);
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 255, 65, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px) scale(1.02);
+            border-color: var(--dark-green);
+            box-shadow: 0 20px 60px rgba(0, 255, 65, 0.3);
+        }
+
+        .card:hover::before {
+            left: 100%;
+        }
+
+        .card h3 {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 2rem;
+            color: var(--grove-green);
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .card p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            line-height: 1.9;
+            margin-bottom: 1rem;
+        }
+
+        /* Info Grid */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        /* Stats Section - NEU */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, var(--card-dark), var(--card-light));
+            border: 2px solid var(--border-subtle);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(0, 255, 65, 0.1) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .stat-card:hover {
+            border-color: var(--grove-green);
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(0, 255, 65, 0.3);
+        }
+
+        .stat-card:hover::before {
+            opacity: 1;
+        }
+
+        .stat-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: inline-block;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .stat-number {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 3rem;
+            color: var(--grove-green);
+            margin-bottom: 0.5rem;
+            text-shadow: 0 0 20px rgba(0, 255, 65, 0.5);
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Skills/Experience Bars - NEU */
+        .skill-bar {
+            margin-bottom: 2rem;
+        }
+
+        .skill-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.8rem;
+        }
+
+        .skill-name {
+            font-weight: 600;
+            color: var(--text-white);
+            font-size: 1.1rem;
+        }
+
+        .skill-percentage {
+            color: var(--grove-green);
+            font-weight: 700;
+        }
+
+        .skill-progress {
+            height: 12px;
+            background: var(--card-dark);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.5);
+            position: relative;
+        }
+
+        .skill-progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--dark-green), var(--grove-green));
+            border-radius: 10px;
+            position: relative;
+            overflow: hidden;
+            transition: width 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            width: 0;
+            box-shadow: 0 0 20px rgba(0, 255, 65, 0.5);
+        }
+
+        .skill-progress-bar::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        /* Timeline - NEU */
+        .timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, transparent, var(--grove-green), transparent);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            display: flex;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(odd) {
+            flex-direction: row;
+        }
+
+        .timeline-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .timeline-content {
+            width: calc(50% - 40px);
+            background: linear-gradient(135deg, var(--card-dark), var(--card-light));
+            border: 2px solid var(--border-subtle);
+            border-radius: 15px;
+            padding: 2rem;
+            position: relative;
+            transition: all 0.4s ease;
+        }
+
+        .timeline-content:hover {
+            border-color: var(--grove-green);
+            transform: scale(1.05);
+            box-shadow: 0 10px 40px rgba(0, 255, 65, 0.3);
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            width: 20px;
+            height: 20px;
+            background: var(--grove-green);
+            border: 4px solid var(--deep-green);
+            border-radius: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 0 20px var(--grove-green);
+            z-index: 2;
+        }
+
+        .timeline-date {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 1.3rem;
+            color: var(--grove-green);
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text-white);
+            margin-bottom: 0.8rem;
+        }
+
+        .timeline-description {
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* Achievement Badges - NEU */
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .achievement-badge {
+            background: linear-gradient(135deg, var(--card-dark), var(--card-light));
+            border: 2px solid var(--border-subtle);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.4s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .achievement-badge::before {
+            content: '★';
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            font-size: 8rem;
+            color: var(--grove-green);
+            opacity: 0.05;
+            transition: all 0.4s ease;
+        }
+
+        .achievement-badge:hover {
+            border-color: var(--grove-green);
+            transform: translateY(-10px) rotate(3deg);
+            box-shadow: 0 15px 50px rgba(0, 255, 65, 0.4);
+        }
+
+        .achievement-badge:hover::before {
+            transform: rotate(180deg);
+            opacity: 0.1;
+        }
+
+        .achievement-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            filter: drop-shadow(0 0 15px rgba(0, 255, 65, 0.7));
+        }
+
+        .achievement-title {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 1.3rem;
+            color: var(--grove-green);
+            margin-bottom: 0.5rem;
+            letter-spacing: 1px;
+        }
+
+        .achievement-description {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* Experience Badge */
+        .experience-badge {
+            background: linear-gradient(135deg, var(--dark-green), var(--grove-green));
+            border-radius: 20px;
+            padding: 2.5rem;
+            text-align: center;
+            box-shadow: 
+                0 15px 50px rgba(0, 255, 65, 0.4),
+                inset 0 0 40px rgba(0, 0, 0, 0.2);
+            margin: 3rem 0;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+
+        .experience-badge:hover {
+            transform: translateY(-5px);
+            box-shadow: 
+                0 20px 60px rgba(0, 255, 65, 0.5),
+                inset 0 0 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .experience-badge::before {
+            content: '🏆';
+            position: absolute;
+            font-size: 15rem;
+            opacity: 0.1;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: rotate 20s linear infinite;
+        }
+
+        .experience-badge h4 {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 2rem;
+            color: var(--deep-black);
+            margin-bottom: 0.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .experience-badge p {
+            font-size: 1.3rem;
+            color: var(--deep-black);
+            font-weight: 600;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Table */
+        .table-wrapper {
+            overflow-x: auto;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0, 255, 65, 0.2);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--card-dark);
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        thead {
+            background: linear-gradient(135deg, var(--dark-green), var(--grove-green));
+        }
+
+        th {
+            padding: 1.5rem;
+            text-align: left;
+            font-family: 'Bebas Neue', cursive;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--deep-black);
+            font-weight: 700;
+        }
+
+        td {
+            padding: 1.3rem 1.5rem;
+            border-bottom: 1px solid var(--border-subtle);
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        tbody tr {
+            transition: all 0.3s ease;
+        }
+
+        tbody tr:hover {
+            background: var(--card-light);
+            transform: scale(1.01);
+        }
+
+        tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        td:first-child {
+            font-weight: 600;
+            color: var(--text-white);
+        }
+
+        /* Team Cards mit Flip-Effekt - NEU */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            margin: 3rem 0;
+        }
+
+        .team-card {
+            height: 380px;
+            perspective: 1000px;
+        }
+
+        .team-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+        }
+
+        .team-card:hover .team-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .team-card-front,
+        .team-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 20px;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .team-card-front {
+            background: linear-gradient(135deg, rgba(0, 255, 65, 0.15), rgba(0, 204, 51, 0.08));
+            border: 2px solid var(--dark-green);
+            box-shadow: 0 10px 40px rgba(0, 255, 65, 0.2);
+        }
+
+        .team-card-back {
+            background: linear-gradient(135deg, var(--dark-green), var(--grove-green));
+            transform: rotateY(180deg);
+            box-shadow: 0 10px 40px rgba(0, 255, 65, 0.3);
+        }
+
+        .team-avatar {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, var(--dark-green), var(--grove-green));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 10px 30px rgba(0, 255, 65, 0.4);
+        }
+
+        .team-role {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 1.8rem;
+            color: var(--grove-green);
+            margin-bottom: 1rem;
+            letter-spacing: 2px;
+            text-align: center;
+        }
+
+        .team-name {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--text-white);
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+
+        .team-id {
+            font-size: 1rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        .team-position {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-top: 0.5rem;
+            text-align: center;
+        }
+
+        .team-card-back h3 {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 2rem;
+            color: var(--deep-black);
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .team-card-back p {
+            color: var(--deep-black);
+            text-align: center;
+            line-height: 1.6;
+            font-weight: 500;
+        }
+
+        .team-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+
+        .team-skill {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: var(--text-white);
+        }
+
+        /* Feature List */
+        .feature-list {
+            list-style: none;
+            margin: 2rem 0;
+        }
+
+        .feature-list li {
+            background: linear-gradient(135deg, var(--card-dark), var(--card-light));
+            border-left: 5px solid var(--grove-green);
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            border-radius: 10px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-list li::before {
+            content: '';
+            position: absolute;
+            left: -5px;
+            top: 0;
+            width: 5px;
+            height: 0;
+            background: var(--grove-green);
+            transition: height 0.4s ease;
+            box-shadow: 0 0 20px var(--grove-green);
+        }
+
+        .feature-list li:hover {
+            transform: translateX(15px);
+            box-shadow: 0 10px 40px rgba(0, 255, 65, 0.3);
+        }
+
+        .feature-list li:hover::before {
+            height: 100%;
+        }
+
+        .feature-list li strong {
+            color: var(--grove-green);
+            font-size: 1.3rem;
+            display: block;
+            margin-bottom: 0.8rem;
+            font-family: 'Bebas Neue', cursive;
+            letter-spacing: 1px;
+        }
+
+        /* Rank Categories */
+        .rank-category {
+            margin-bottom: 4rem;
+        }
+
+        .rank-category h4 {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 2rem;
+            color: var(--grove-green);
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+            border-left: 5px solid var(--grove-green);
+            letter-spacing: 2px;
+        }
+
+        /* Criteria Grid */
+        .criteria-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .criteria-item {
+            background: linear-gradient(135deg, var(--card-dark), var(--card-light));
+            border: 2px solid var(--border-subtle);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .criteria-item::before {
+            content: '✓';
+            position: absolute;
+            top: -30px;
+            right: -30px;
+            font-size: 8rem;
+            color: var(--grove-green);
+            opacity: 0.05;
+        }
+
+        .criteria-item:hover {
+            border-color: var(--grove-green);
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 20px 50px rgba(0, 255, 65, 0.3);
+        }
+
+        .criteria-item .icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            filter: drop-shadow(0 0 10px rgba(0, 255, 65, 0.6));
+        }
+
+        .criteria-item strong {
+            display: block;
+            color: var(--grove-green);
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+            font-family: 'Bebas Neue', cursive;
+            letter-spacing: 1px;
+        }
+
+        .criteria-item p {
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        /* Divider */
+        .divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--grove-green), transparent);
+            margin: 5rem 0;
+            position: relative;
+        }
+
+        .divider::before {
+            content: '💚';
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background: var(--deep-green);
+            padding: 0 1rem;
+            font-size: 1.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--deep-black);
+            padding: 4rem 2rem;
+            text-align: center;
+            border-top: 3px solid var(--grove-green);
+            box-shadow: 0 -10px 40px rgba(0, 255, 65, 0.2);
+        }
+
+        .footer-box {
+            max-width: 700px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, rgba(0, 255, 65, 0.1), rgba(0, 204, 51, 0.05));
+            border: 2px solid var(--dark-green);
+            border-radius: 15px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 40px rgba(0, 255, 65, 0.2);
+            transition: all 0.4s ease;
+        }
+
+        .footer-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 50px rgba(0, 255, 65, 0.3);
+        }
+
+        .footer-box p {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-box strong {
+            color: var(--grove-green);
+            font-family: 'Bebas Neue', cursive;
+            font-size: 1.5rem;
+            letter-spacing: 2px;
+        }
+
+        /* Scroll to Top */
+        .scroll-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--dark-green), var(--grove-green));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--deep-black);
+            cursor: pointer;
+            opacity: 0;
+            transition: all 0.3s ease;
+            z-index: 999;
+            box-shadow: 0 5px 25px rgba(0, 255, 65, 0.5);
+            font-weight: 900;
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+        }
+
+        .scroll-top:hover {
+            transform: translateY(-10px) scale(1.1);
+            box-shadow: 0 10px 40px rgba(0, 255, 65, 0.7);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .timeline::before {
+                left: 30px;
+            }
+
+            .timeline-item,
+            .timeline-item:nth-child(even) {
+                flex-direction: row;
+            }
+
+            .timeline-content {
+                width: calc(100% - 80px);
+                margin-left: 80px;
+            }
+
+            .timeline-dot {
+                left: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+
+            .section-title h2 {
+                font-size: 2.5rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .info-grid,
+            .stats-grid,
+            .team-grid,
+            .achievements-grid,
+            .criteria-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-badge {
+                width: 120px;
+                height: 120px;
+                font-size: 3rem;
+            }
+
+            table {
+                font-size: 0.9rem;
+            }
+
+            th, td {
+                padding: 1rem;
+            }
+
+            .timeline-content {
+                width: calc(100% - 60px);
+                margin-left: 60px;
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            nav,
+            .scroll-top,
+            .animated-bg,
+            .particles {
+                display: none !important;
+            }
+
+            body {
+                background: white;
+                color: black;
+            }
+
+            section {
+                page-break-inside: avoid;
+                opacity: 1 !important;
+                transform: none !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Progress Bar -->
+    <div class="progress-bar" id="progressBar"></div>
+
+    <!-- Animated Background -->
+    <div class="animated-bg"></div>
+
+    <!-- Particles -->
+    <div class="particles" id="particles"></div>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <ul>
+            <li><a href="#info">Informationen</a></li>
+            <li><a href="#stats">Statistiken</a></li>
+            <li><a href="#warum">Warum Leader</a></li>
+            <li><a href="#timeline">Timeline</a></li>
+            <li><a href="#achievements">Erfolge</a></li>
+            <li><a href="#vorschlaege">Vorschläge</a></li>
+            <li><a href="#auszeichnet">Qualifikationen</a></li>
+            <li><a href="#team">Team</a></li>
+            <li><a href="#konzept">Konzept</a></li>
+            <li><a href="#schluss">Schlusswort</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-badge">💚</div>
+        <h1>Grove Street Gang</h1>
+        <h2>Leader-Bewerbung</h2>
+        <p class="subtitle">Yasser Babylon | ID: 202897</p>
+        <div class="intro-box">
+            <p><strong>Sehr geehrtes Admin-Team,</strong><br><br>
+            hiermit bewerbe ich mich für die Organisation <strong>"Grove Street Gang"</strong>.</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Section 1: Informationen -->
+        <section id="info">
+            <div class="section-title">
+                <h2>1. Informationen</h2>
+                <div class="line"></div>
+            </div>
+
+            <div class="info-grid">
+                <div class="card">
+                    <h3>OOC-Teil</h3>
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Kategorie</th>
+                                    <th>Information</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Yasser</td>
+                                </tr>
+                                <tr>
+                                    <td>Alter</td>
+                                    <td>17 Jahre</td>
+                                </tr>
+                                <tr>
+                                    <td>Discord</td>
+                                    <td>kingfilezilla</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>IC-Teil</h3>
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Kategorie</th>
+                                    <th>Information</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Yasser Babylon</td>
+                                </tr>
+                                <tr>
+                                    <td>ID</td>
+                                    <td>202897</td>
+                                </tr>
+                                <tr>
+                                    <td>Visum</td>
+                                    <td>Stufe 12</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- Section 2: Statistiken - NEU -->
+        <section id="stats">
+            <div class="section-title">
+                <h2>Meine Statistiken</h2>
+                <div class="line"></div>
+            </div>
+
+
+            <div class="card" style="margin-top: 3rem;">
+                <h3>Meine Fähigkeiten & Erfahrung</h3>
+                <div style="margin-top: 2rem;">
+                    <div class="skill-bar">
+                        <div class="skill-info">
+                            <span class="skill-name">🎯 Führungsqualität</span>
+                            <span class="skill-percentage">95%</span>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="skill-progress-bar" data-progress="95"></div>
+                        </div>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-info">
+                            <span class="skill-name">📋 Organisationsmanagement</span>
+                            <span class="skill-percentage">90%</span>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="skill-progress-bar" data-progress="90"></div>
+                        </div>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-info">
+                            <span class="skill-name">🤝 Teamwork & Kommunikation</span>
+                            <span class="skill-percentage">88%</span>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="skill-progress-bar" data-progress="88"></div>
+                        </div>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-info">
+                            <span class="skill-name">💡 Kreativität & Innovation</span>
+                            <span class="skill-percentage">91%</span>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="skill-progress-bar" data-progress="91"></div>
+                        </div>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-info">
+                            <span class="skill-name">⚔️ Event-Erfahrung</span>
+                            <span class="skill-percentage">100%</span>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="skill-progress-bar" data-progress="100"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- Section 3: Warum Leader -->
+        <section id="warum">
+            <div class="section-title">
+                <h2>2. Warum ich Leader der Grove Street Gang werden will</h2>
+                <div class="line"></div>
+            </div>
+
+            <div class="experience-badge">
+                <h4>🏆 Vorherige Erfahrung</h4>
+                <p>Ehemaliger Vize-Leader der Grove Street Gang</p>
+            </div>
+
+            <div class="card">
+                <p>Ich bin der Meinung, dass ich eine Organisation leiten kann. Ich habe gute und genug Erfahrung gesammelt, um eine komplette Organisation zu führen. <strong>Als ehemaliger Vize-Leader der Grove Street Gang</strong> kenne ich die internen Abläufe, die Struktur und die Herausforderungen bereits sehr gut.</p>
+                <br>
+                <p>All die Erfahrungen haben mir gezeigt, wie wichtig Struktur, Aktivität und Teamarbeit sind. <strong>Ich war bereits Teil des Führungsteams</strong> und habe gelernt, Verantwortung zu tragen und Entscheidungen zu treffen.</p>
+                <br>
+                <p>Deshalb bin ich mir sicher, dass ich bereit dafür bin, die Rolle als Leader zu übernehmen und die Grove Street Gang nach vorne zu bringen. <strong>Ich kenne die Organisation von innen</strong> und weiß genau, was gebraucht wird, um sie erfolgreich zu führen.</p>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- Section 4: Timeline - NEU -->
+        <section id="timeline">
+            <div class="section-title">
+                <h2>Mein Weg zur Führung</h2>
+                <div class="line"></div>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">Anfang</div>
+                        <div class="timeline-title">🌱 Einstieg in die Crime-Szene</div>
+                        <div class="timeline-description">
+                            Erste Schritte im Roleplay und Kennenlernen der Strukturen verschiedener Gangs
+                        </div>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">Entwicklung</div>
+                        <div class="timeline-title">📈 Aufstieg durch die Ränge</div>
+                        <div class="timeline-description">
+                            Aktive Teilnahme an Events, Beweis meiner Zuverlässigkeit und Führungsqualitäten
+                        </div>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">Verantwortung</div>
+                        <div class="timeline-title">⭐ Vize-Leader Position</div>
+                        <div class="timeline-description">
+                            Übernahme der Vize-Leader-Rolle in der Grove Street Gang, Koordination von Events und Mitgliederbetreuung
+                        </div>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-date">Heute</div>
+                        <div class="timeline-title">🎯 Bereit für die Führung</div>
+                        <div class="timeline-description">
+                            Mit umfassender Erfahrung und bewährten Fähigkeiten bereit, die Organisation als Leader zu übernehmen
+                        </div>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- Section 5: Achievements - NEU -->
+        <section id="achievements">
+            <div class="section-title">
+                <h2>Meine Erfolge & Auszeichnungen</h2>
+                <div class="line"></div>
+            </div>
+
+            <div class="achievements-grid">
+                <div class="achievement-badge">
+                    <div class="achievement-icon">👑</div>
+                    <div class="achievement-title">Vize-Leader</div>
+                    <div class="achievement-description">Erfahrung in der Führungsebene</div>
+                </div>
+
+                <div class="achievement-badge">
+                    <div class="achievement-icon">🤝</div>
+                    <div class="achievement-title">Team-Builder</div>
+                    <div class="achievement-description">Starkes Leadership-Team aufgebaut</div>
+                </div>
+                <div class="achievement-badge">
+                    <div class="achievement-icon">📋</div>
+                    <div class="achievement-title">Organisator</div>
+                    <div class="achievement-description">Strukturen & Prozesse etabliert</div>
+                </div>
+
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- Section 6: Vorschläge -->
+        <section id="vorschlaege">
+            <div class="section-title">
+                <h2>3. Vorschläge für besseres Rollenspiel in meiner Organisation</h2>
+                <div class="line"></div>
+            </div>
+
+            <ul class="feature-list">
+                <li>
+                    <strong>🎯 Bei allen möglichen Events mitmachen</strong>
+                    Egal ob Fort Zancudo, Clandestine oder Battleship – Hauptsache dabei sein und was holen.
+                </li>
+                <li>
+                    <strong>🚗 Zinks auf den Highways & im Ghetto</strong>
+                    Regelmäßig Zink-Aktionen fahren, damit man sieht, wir sind aktiv.
+                </li>
+                <li>
+                    <strong>🔫 Ammu & Shops regelmäßig ziehen</strong>
+                    Nicht nur fürs Geld, sondern auch für die Action – gehört einfach dazu.
+                </li>
+                <li>
+                    <strong>🎁 Verlosungen nach Event-Gewinnen</strong>
+                    Wenn wir Events gewinnen, direkt was zurückgeben an die Mitglieder – Verlosung oder kleine Belohnungen.
+                </li>
+                <li>
+                    <strong>🎮 Interne Orga-Events starten</strong>
+                    Damit die Leute motiviert bleiben – z.B. Sniper vs Gokart, Hide & Seek oder andere Aktionen.
+                </li>
+            </ul>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- Section 7: Was mich auszeichnet -->
+        <section id="auszeichnet">
+            <div class="section-title">
+                <h2>4. Was zeichnet mich als Leader aus</h2>
+                <div class="line"></div>
+            </div>
+
+            <div class="card">
+                <p>Ich habe über die Zeit viel Erfahrung gesammelt und war lange aktiv im Crime-Bereich. In der Zeit habe ich einiges mitgenommen und verstanden, wie eine Organisation laufen muss. Unter verschiedenen Gangs konnte ich viel lernen – vor allem, wie man Sachen ordentlich regelt und eine Struktur reinbringt.</p>
+                <br>
+                <p><strong>Besonders wichtig: Ich war bereits Vize-Leader der Grove Street Gang</strong> und kenne daher die Organisation, die Mitglieder und die internen Prozesse sehr genau. Diese Erfahrung in der Führungsebene hat mir gezeigt, worauf es ankommt und wie man ein starkes Team aufbaut und zusammenhält.</p>
+                <br>
+                <p>Jetzt will ich den nächsten Schritt gehen. Ich bin überzeugt, dass ich das Zeug dazu habe, die Grove Street Gang zu führen. Ich will mich beweisen und Verantwortung übernehmen.</p>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- Section 8: Team mit verbessertem Design -->
+        <section id="team">
+            <div class="section-title">
+                <h2>Mein Leadership-Team</h2>
+                <div class="line"></div>
+            </div>
+
+            <div class="card">
+                <p style="text-align: center; font-size: 1.15rem; margin-bottom: 3rem; color: var(--text-muted);">
+                    Ein starkes Team ist das Fundament jeder erfolgreichen Organisation. Mit meinen erfahrenen Vize-Leadern und Führungsmitgliedern bringe ich vertrauenswürdige Personen mit, die mich bei der Führung der Grove Street Gang unterstützen werden.
+                </p>
+            </div>
+
+            <div class="rank-category">
+                <h4>🔥 Vize-Leader</h4>
+                <div class="team-grid">
+                    <div class="team-card">
+                        <div class="team-card-inner">
+                            <div class="team-card-front">
+                                <div class="team-avatar">👤</div>
+                                <div class="team-role">Vize-Leader</div>
+                                <div class="team-name">Baba Bonga</div>
+                                <div class="team-id">ID: 134677</div>
+                                <div class="team-position">Right Hand [11]</div>
+                            </div>
+                            <div class="team-card-back">
+                                <h3>Erfahrung & Skills</h3>
+                                <p>Langjährige Erfahrung in Crime-Szene. Zuverlässig und engagiert in allen Bereichen.</p>
+                                <div class="team-skills">
+                                    
+                                    <span class="team-skill">Event-Planung</span>
+                                    <span class="team-skill">Recruiting</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="team-card">
+                        <div class="team-card-inner">
+                            <div class="team-card-front">
+                                <div class="team-avatar">👤</div>
+                                <div class="team-role">Vize-Leader</div>
+                                <div class="team-name">Tonga Bonga</div>
+                                <div class="team-id">ID: 117147</div>
+                                <div class="team-position">Right Hand [11]</div>
+                            </div>
+                            <div class="team-card-back">
+                                <h3>Erfahrung & Skills</h3>
+                                <p>Spezialist für Taktik und Strategie.</p>
+                                <div class="team-skills">
+                                    <span class="team-skill">Taktik</span>
+                                    <span class="team-skill">Kommunikation</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="rank-category">
+                <h4>⭐ Weitere Führungsmitglieder</h4>
+                <div class="team-grid">
+                    <div class="team-card">
+                        <div class="team-card-inner">
+                            <div class="team-card-front">
+                                <div class="team-avatar">👤</div>
+                                <div class="team-role">Leaderschaft</div>
+                                <div class="team-name">Anastasia Einker</div>
+                                <div class="team-id">ID: 134589</div>
+                                <div class="team-position">Right Hand [11]</div>
+                            </div>
+                            <div class="team-card-back">
+                                <h3>Erfahrung & Skills</h3>
+                                <p>Meiste Erfahrung, in der Crime-Szene</p>
+                                <div class="team-skills">
+                                    <span class="team-skill">Organisation</span>
+                                    <span class="team-skill">Support</span>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="team-card">
+                        <div class="team-card-inner">
+                            <div class="team-card-front">
+                                <div class="team-avatar">👤</div>
+                                <div class="team-role">Leaderschaft</div>
+                                <div class="team-name">Yussef Baba</div>
+                                <div class="team-id">ID: 227118</div>
+                                <div class="team-position">Right Hand [11]</div>
+                            </div>
+                            <div class="team-card-back">
+                                <h3>Erfahrung & Skills</h3>
+                                <p>Erfahrung im Bereich Turf</p>
+                                <div class="team-skills">
+                                    <span class="team-skill">Shooter</span>
+                                    <span class="team-skill">Teamfähig</span>
+                                  
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="experience-badge" style="margin-top: 3rem;">
+                <h4>💪 Gemeinsam stark</h4>
+                <p>Zusammen bringen wir die Grove Street Gang an die Spitze</p>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- Section 9: Konzept -->
+        <section id="konzept">
+            <div class="section-title">
+                <h2>5. Konzept der Organisation</h2>
+                <div class="line"></div>
+            </div>
+
+            <div class="card">
+                <h3>Rangstruktur der Grove Street Gang</h3>
+
+                <div class="rank-category">
+                    <h4>Leaderschaft</h4>
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Rang</th>
+                                    <th>Bezeichnung</th>
+                                    <th>Aufgaben</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>[12]</td>
+                                    <td><strong>O.G.</strong></td>
+                                    <td>Leader der Organisation</td>
+                                </tr>
+                                <tr>
+                                    <td>[11]</td>
+                                    <td><strong>Right Hand</strong></td>
+                                    <td>Vize-Leader / rechte Hand des Leaders</td>
+                                </tr>
+                                <tr>
+                                    <td>[10]</td>
+                                    <td><strong>Street General</strong></td>
+                                    <td>Linke Hand / organisatorische Unterstützung</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="rank-category">
+                    <h4>Turfer & Ausbilder</h4>
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Rang</th>
+                                    <th>Bezeichnung</th>
+                                    <th>Aufgaben</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>[9]</td>
+                                    <td><strong>Turf Captain</strong></td>
+                                    <td>Zuständig für Turf-Bereich</td>
+                                </tr>
+                                <tr>
+                                    <td>[8]</td>
+                                    <td><strong>Mentor</strong></td>
+                                    <td>Verantwortlich für die Ausbildung und Schulung neuer Member</td>
+                                </tr>
+                                <tr>
+                                    <td>[7]</td>
+                                    <td><strong>Turf Shooter</strong></td>
+                                    <td>Aktiver Kämpfer im Turf-Bereich</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="rank-category">
+                    <h4>Mitglieder</h4>
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Rang</th>
+                                    <th>Bezeichnung</th>
+                                    <th>Aufgaben</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>[6]</td>
+                                    <td><strong>True Homie</strong></td>
+                                    <td>Vollwertiges Mitglied, bei Aktionen an vorderster Front</td>
+                                </tr>
+                                <tr>
+                                    <td>[5]</td>
+                                    <td><strong>Big Homie</strong></td>
+                                    <td>Zuverlässiges, aktives Mitglied mit Pflichten im Alltag</td>
+                                </tr>
+                                <tr>
+                                    <td>[4]</td>
+                                    <td><strong>Street Artist</strong></td>
+                                    <td>Zuständig fürs Sprayen und Markieren der Hood</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="rank-category">
+                    <h4>Neue & Strafränge</h4>
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Rang</th>
+                                    <th>Bezeichnung</th>
+                                    <th>Aufgaben</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>[3]</td>
+                                    <td><strong>Young G</strong></td>
+                                    <td>Muss sich noch beweisen, zeigt Potenzial</td>
+                                </tr>
+                                <tr>
+                                    <td>[2]</td>
+                                    <td><strong>Fresh Blood</strong></td>
+                                    <td>Frisch dabei, steht unter Beobachtung</td>
+                                </tr>
+                                <tr>
+                                    <td>[1]</td>
+                                    <td><strong>Freeze</strong></td>
+                                    <td>Strafrang / hat intern verkackt</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" style="margin-top: 3rem;">
+                <h3>Beitrittskriterien</h3>
+                <div class="criteria-grid">
+                    <div class="criteria-item">
+                        <div class="icon">✓</div>
+                        <strong>Visumstufe</strong>
+                        <p>Mindestens Stufe 5</p>
+                    </div>
+                    <div class="criteria-item">
+                        <div class="icon">✓</div>
+                        <strong>Alter & Reife</strong>
+                        <p>Geistige Reife von 16 Jahren</p>
+                    </div>
+                    <div class="criteria-item">
+                        <div class="icon">✓</div>
+                        <strong>Aktivität</strong>
+                        <p>Regelmäßige Onlinezeiten</p>
+                    </div>
+                    <div class="criteria-item">
+                        <div class="icon">✓</div>
+                        <strong>Regelwerk</strong>
+                        <p>Zustimmung und Wissen des Regelwerks</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- Section 10: Schlusswort -->
+        <section id="schluss">
+            <div class="section-title">
+                <h2>6. Schlusswort</h2>
+                <div class="line"></div>
+            </div>
+
+            <div class="card">
+                <p style="text-align: center; font-size: 1.15rem; line-height: 2;">
+                    Vielen Dank fürs Durchlesen meiner Bewerbung. Ich hoffe, dass ich die Möglichkeit bekomme, mein Konzept auch persönlich vorzustellen und zu zeigen, was ich für die Grove Street Gang erreichen kann.
+                </p>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-box">
+            <p><strong>Mit freundlichen Grüßen</strong></p>
+            <p><strong>Yasser Babylon</strong></p>
+            <p style="margin-top: 1rem; color: var(--text-muted);">ID: 202897 | Discord: kingfilezilla</p>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top -->
+    <div class="scroll-top" id="scrollTop">↑</div>
+
+    <script>
+        // Create Particles
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 30;
+
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDuration = (Math.random() * 10 + 5) + 's';
+                particle.style.animationDelay = Math.random() * 5 + 's';
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        createParticles();
+
+        // Progress Bar
+        function updateProgressBar() {
+            const progressBar = document.getElementById('progressBar');
+            const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (window.scrollY / windowHeight) * 100;
+            progressBar.style.width = scrolled + '%';
+        }
+
+        window.addEventListener('scroll', updateProgressBar);
+
+        // Smooth Scrolling
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const target = document.querySelector(targetId);
+                const navHeight = document.querySelector('nav').offsetHeight;
+                
+                window.scrollTo({
+                    top: target.offsetTop - navHeight - 20,
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Scroll to Top Button
+        const scrollTopBtn = document.getElementById('scrollTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 400) {
+                scrollTopBtn.classList.add('visible');
+            } else {
+                scrollTopBtn.classList.remove('visible');
+            }
+        });
+
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Navbar Scroll Effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Intersection Observer for Sections
+        const sections = document.querySelectorAll('section');
+        const observerOptions = {
+            threshold: 0.15,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => observer.observe(section));
+
+        // Skill Bars Animation
+        const skillObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const bars = entry.target.querySelectorAll('.skill-progress-bar');
+                    bars.forEach(bar => {
+                        const progress = bar.getAttribute('data-progress');
+                        bar.style.width = progress + '%';
+                    });
+                    skillObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('.card').forEach(card => {
+            if (card.querySelector('.skill-bar')) {
+                skillObserver.observe(card);
+            }
+        });
+
+        // Active Navigation
+        window.addEventListener('scroll', () => {
+            const navLinks = document.querySelectorAll('nav a');
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= (sectionTop - 300)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Stats Counter Animation
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const statNumbers = entry.target.querySelectorAll('.stat-number');
+                    statNumbers.forEach(stat => {
+                        const text = stat.textContent;
+                        const hasPlus = text.includes('+');
+                        const numberMatch = text.match(/\d+/);
+                        
+                        if (numberMatch) {
+                            const targetNumber = parseInt(numberMatch[0]);
+                            let currentNumber = 0;
+                            const increment = targetNumber / 50;
+                            
+                            const counter = setInterval(() => {
+                                currentNumber += increment;
+                                if (currentNumber >= targetNumber) {
+                                    stat.textContent = targetNumber + (hasPlus ? '+' : '');
+                                    clearInterval(counter);
+                                } else {
+                                    stat.textContent = Math.floor(currentNumber) + (hasPlus ? '+' : '');
+                                }
+                            }, 30);
+                        }
+                    });
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        const statsSection = document.getElementById('stats');
+        if (statsSection) {
+            statsObserver.observe(statsSection);
+        }
+
+        // Prevent right-click menu (optional - for presentation mode)
+        // document.addEventListener('contextmenu', e => e.preventDefault());
+
+        console.log('🌳 Grove Street Gang - Leader Application Loaded 💚');
+    </script>
+</body>
+</html>
